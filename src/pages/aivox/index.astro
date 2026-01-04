@@ -3,6 +3,11 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import { Shield, Smartphone, Zap, CheckCircle, Download } from 'lucide-astro';
+import { Image } from 'astro:assets';
+
+// Import local images
+import heroImage from '../../assets/images/aivox-hero.png';
+import screenshot1 from '../../assets/images/screenshot1.png';
 ---
 
 <MainLayout title="Aivox - AI Call Recorder">
@@ -23,21 +28,16 @@ import { Shield, Smartphone, Zap, CheckCircle, Download } from 'lucide-astro';
                     Record calls securely on Android. 100% Offline, Ad-Free, and powered by on-device AI for crystal clear audio synchronization.
                  </p>
                  <div class="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
-                    <a href="#" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-xl text-charcoal bg-white hover:bg-gray-100 md:py-4 md:text-lg md:px-10 transition-all transform hover:scale-105 shadow-xl">
-                       <Download class="w-6 h-6 mr-2" />
-                       Get it on Google Play
+                    <a href="#" class="inline-block transition-transform transform hover:scale-105">
+                       <img src="/images/google-play-badge.png" alt="Get it on Google Play" class="h-16 w-auto" />
                     </a>
                     <p class="mt-3 text-xs text-gray-400">Requires Android 10+. No subscription required.</p>
                  </div>
               </div>
               <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
                  <div class="relative mx-auto w-full rounded-lg shadow-lg lg:max-w-md">
-                    <!-- Placeholder for Hero Image -->
-                    <div class="relative block w-full bg-gray-800 rounded-3xl overflow-hidden aspect-[9/16] border-4 border-gray-700 shadow-2xl">
-                       <div class="absolute inset-0 flex items-center justify-center text-gray-500 flex-col">
-                          <Smartphone class="w-20 h-20 mb-4 opacity-50" />
-                          <span class="text-sm uppercase tracking-widest">App Interface Preview</span>
-                       </div>
+                    <div class="relative block w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-gray-700">
+                       <Image src={heroImage} alt="Aivox App Interface" class="w-full h-auto object-cover" />
                     </div>
                  </div>
               </div>
@@ -92,15 +92,55 @@ import { Shield, Smartphone, Zap, CheckCircle, Download } from 'lucide-astro';
         </div>
      </div>
      
+     <!-- Showcase Section -->
+     <div class="py-24 bg-gray-50 dark:bg-charcoal/30 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                 <div class="mb-12 lg:mb-0">
+                     <Image src={screenshot1} alt="Aivox organizing your calls" class="rounded-3xl shadow-2xl border-4 border-gray-200 dark:border-gray-700" />
+                 </div>
+                 <div>
+                     <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">
+                         Organize your life, <br />
+                         <span class="text-crimson">one call at a time.</span>
+                     </h2>
+                     <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                         Automatically categorize recordings, add notes, and search through your history with lightning speed.
+                     </p>
+                     <ul class="space-y-4">
+                         <li class="flex items-start">
+                             <div class="flex-shrink-0">
+                                 <CheckCircle class="h-6 w-6 text-crimson" />
+                             </div>
+                             <p class="ml-3 text-base text-gray-600 dark:text-gray-400">Automatic silence skipping</p>
+                         </li>
+                         <li class="flex items-start">
+                             <div class="flex-shrink-0">
+                                 <CheckCircle class="h-6 w-6 text-crimson" />
+                             </div>
+                             <p class="ml-3 text-base text-gray-600 dark:text-gray-400">Search by contact or date</p>
+                         </li>
+                         <li class="flex items-start">
+                             <div class="flex-shrink-0">
+                                 <CheckCircle class="h-6 w-6 text-crimson" />
+                             </div>
+                             <p class="ml-3 text-base text-gray-600 dark:text-gray-400">Secure PIN protection</p>
+                         </li>
+                     </ul>
+                 </div>
+             </div>
+        </div>
+     </div>
+
      <!-- Privacy CTA -->
-     <div class="bg-gray-50 dark:bg-charcoal/30 py-16">
+     <div class="bg-white dark:bg-charcoal py-16 border-t border-gray-100 dark:border-gray-800">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Transparent & Safe</h2>
             <p class="text-gray-600 dark:text-gray-400 mb-8">
                We believe you shouldn't have to sacrifice privacy for utility. Read exactly how we handle (or rather, don't handle) your data.
             </p>
-            <a href="/aivox/privacy" class="text-crimson font-bold hover:underline">
-               Read our Privacy Policy &rarr;
+            <a href="/aivox/privacy" class="text-crimson font-bold hover:underline inline-flex items-center">
+               Read our Privacy Policy <Shield class="ml-2 w-4 h-4" />
             </a>
         </div>
      </div>
