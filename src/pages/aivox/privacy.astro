@@ -1,0 +1,69 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const lastUpdated = "January 4, 2026";
+---
+
+<MainLayout title="Privacy Policy - Aivox">
+  <Navbar />
+  
+  <main class="flex-grow py-16 bg-white dark:bg-charcoal">
+     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-lg prose-crimson dark:prose-invert">
+        <h1>Privacy Policy</h1>
+        <p class="text-sm text-gray-500">Last Updated: {lastUpdated}</p>
+        
+        <div class="bg-crimson/5 border-l-4 border-crimson p-6 my-8 rounded-r-xl">
+           <h3 class="text-crimson font-bold mt-0">Core Privacy Promise: 100% Offline</h3>
+           <p class="mb-0 text-sm">
+              <strong>Aivox is an offline-first application.</strong> We do not operate servers to store your call recordings. Your data never leaves your device unless you explicitly choose to share it through Android's system sharing intents.
+           </p>
+        </div>
+
+        <h2>1. Data Collection & Storage</h2>
+        <p>
+           Aivox does NOT collect, store, or transmit your personal data, call audio, or contact information to any external server.
+        </p>
+        <ul>
+           <li><strong>Audio Recordings:</strong> Stored locally in the app's private sandbox directory on your device.</li>
+           <li><strong>Call Logs & Metadata:</strong> Processed locally to organize your recordings and then discarded or stored locally based on your preferences.</li>
+        </ul>
+
+        <h2>2. Permissions Usage</h2>
+        <p>To function correctly, Aivox requires specific permissions. Here is how we use them:</p>
+        <ul>
+           <li><strong>Microphone / Audio Source:</strong> Strictly used to capture audio during active calls for recording purposes. Audio is processed in real-time on-device.</li>
+           <li><strong>Storage / File Access:</strong> Required to save your recordings to your device's internal storage.</li>
+           <li><strong>Phone State:</strong> Used to detect when a call starts and ends to automate recording.</li>
+        </ul>
+
+        <h2>3. Third-Party Services</h2>
+        <p>
+           We do not use third-party analytics SDKs (like Firebase Analytics or Google Analytics) that track user behavior. The app is completely ad-free and contains no ad networks.
+        </p>
+        
+        <h2>4. Data Sharing</h2>
+        <p>
+           We do not share your data because we do not have access to it. Any sharing of audio files is initiated solely by you using the standard Android sharing sheet (e.g., sending a recording via email or WhatsApp).
+        </p>
+
+        <h2>5. Children's Privacy</h2>
+        <p>
+           Our services are not directed to children under the age of 13. We do not knowingly collect personal information from children under 13.
+        </p>
+
+        <h2>6. Changes to This Policy</h2>
+        <p>
+           We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes.
+        </p>
+
+        <h2>Contact Us</h2>
+        <p>
+           If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at <a href="mailto:privacy@monkeycoding.com">privacy@monkeycoding.com</a>.
+        </p>
+     </div>
+  </main>
+  
+  <Footer />
+</MainLayout>

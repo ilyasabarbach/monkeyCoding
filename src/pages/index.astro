@@ -1,0 +1,129 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import AppCard from '../components/AppCard.astro';
+import { ArrowRight, Zap, Shield, Smartphone } from 'lucide-astro';
+---
+
+<MainLayout title="Home">
+  <Navbar />
+
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative bg-white dark:bg-charcoal overflow-hidden pt-20 pb-24 sm:pb-32">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center z-10">
+        <div class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-semibold text-crimson bg-crimson/10 mb-8 border border-crimson/20">
+            <span class="pulse w-2 h-2 rounded-full bg-crimson mr-2"></span> Building the future of mobile
+        </div>
+        
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6">
+          MonkeyCoding: AI-Powered Tools <br class="hidden sm:block" />
+          <span class="bg-gradient-to-r from-crimson to-red-600 bg-clip-text text-transparent">for the Modern World.</span>
+        </h1>
+        
+        <p class="max-w-2xl text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed">
+          We craft simple, private, and intelligent mobile applications that solve real-world problems. No bloat, just code.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <a href="#apps" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-2xl text-white bg-crimson hover:bg-red-700 md:py-4 md:text-lg md:px-10 transition-all transform hover:scale-105 shadow-xl shadow-crimson/20">
+             Explore Our Apps
+          </a>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 border border-gray-200 dark:border-gray-700 text-base font-bold rounded-2xl text-gray-700 dark:text-gray-200 bg-white dark:bg-white/5 hover:bg-gray-50 dark:hover:bg-white/10 md:py-4 md:text-lg md:px-10 transition-all">
+             Contact Studio
+          </a>
+        </div>
+      </div>
+      
+      <!-- Abstract Background Elements -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-crimson/5 rounded-full blur-3xl -z-0"></div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="py-20 bg-gray-50 dark:bg-charcoal/50">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+             <div class="p-6">
+                <div class="w-16 h-16 mx-auto bg-crimson/10 rounded-2xl flex items-center justify-center text-crimson mb-6">
+                   <Zap class="w-8 h-8" />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Lightning Fast</h3>
+                <p class="text-gray-600 dark:text-gray-400">Built with standard-setting performance. No lag, just instant results.</p>
+             </div>
+             <div class="p-6">
+                <div class="w-16 h-16 mx-auto bg-crimson/10 rounded-2xl flex items-center justify-center text-crimson mb-6">
+                   <Shield class="w-8 h-8" />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Privacy First</h3>
+                <p class="text-gray-600 dark:text-gray-400">Your data stays on your device. We believe in 100% offline functionality.</p>
+             </div>
+             <div class="p-6">
+                <div class="w-16 h-16 mx-auto bg-crimson/10 rounded-2xl flex items-center justify-center text-crimson mb-6">
+                   <Smartphone class="w-8 h-8" />
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Native Feel</h3>
+                <p class="text-gray-600 dark:text-gray-400">Apps designed to feel right at home on your Android device.</p>
+             </div>
+          </div>
+       </div>
+    </section>
+
+    <!-- Apps Showcase -->
+    <section id="apps" class="py-24 bg-white dark:bg-charcoal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+            Our Apps
+          </h2>
+          <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-400">
+            Discover our portfolio of high-performance tools.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Aivox Card -->
+          <AppCard
+            title="Aivox Call Recorder"
+            description="The only call recorder you'll ever need. 100% Offline, AI-powered transcription, and completely ad-free."
+            href="/aivox"
+            imgSrc="/placeholders/aivox-logo.png"
+          />
+          
+          <!-- Coming Soon Placeholder -->
+          <div class="relative rounded-2xl border-2 border-dashed border-gray-200 dark:border-gray-800 p-8 flex flex-col items-center justify-center text-center opacity-75 hover:opacity-100 transition-opacity">
+             <div class="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4 text-gray-400">
+                <span class="text-2xl font-bold">+</span>
+             </div>
+             <h3 class="text-lg font-medium text-gray-900 dark:text-white">New App Coming Soon</h3>
+             <p class="mt-2 text-sm text-gray-500">We are cooking something special.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-crimson text-white overflow-hidden relative">
+       <div class="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-10"></div>
+       <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-8">Ready to upgrade your mobile experience?</h2>
+          <a href="/aivox" class="inline-flex items-center justify-center px-8 py-4 bg-white text-crimson font-bold rounded-2xl hover:bg-gray-100 transition-all transform hover:scale-105 shadow-xl">
+             Get Started with Aivox <ArrowRight class="ml-2 w-5 h-5" />
+          </a>
+       </div>
+    </section>
+  </main>
+
+  <Footer />
+</MainLayout>
+
+<style>
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+@keyframes pulse-animation {
+  0% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(220, 20, 60, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 20, 60, 0); }
+}
+</style>

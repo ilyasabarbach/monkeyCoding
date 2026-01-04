@@ -1,0 +1,48 @@
+---
+import { Menu } from 'lucide-astro';
+---
+
+<header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100 dark:bg-charcoal/90 dark:border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <a href="/" class="text-2xl font-bold bg-gradient-to-r from-crimson to-red-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+          MonkeyCoding
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8 items-center">
+        <a href="/" class="text-gray-700 hover:text-crimson font-medium transition-colors dark:text-gray-300 dark:hover:text-crimson">
+          Studio
+        </a>
+        <a href="/aivox" class="text-gray-700 hover:text-crimson font-medium transition-colors dark:text-gray-300 dark:hover:text-crimson">
+          Aivox
+        </a>
+        <a href="/contact" class="text-gray-700 hover:text-crimson font-medium transition-colors dark:text-gray-300 dark:hover:text-crimson">
+          Contact
+        </a>
+        <a href="/aivox" class="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-crimson hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-crimson transition-all transform hover:scale-105">
+          Our Apps
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex md:hidden items-center">
+        <button type="button" class="text-gray-500 hover:text-crimson focus:outline-none focus:text-crimson p-2" aria-label="Toggle menu">
+          <Menu class="w-6 h-6" />
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu (Hidden by default, simple implementation for now) -->
+  <div class="hidden md:hidden bg-white dark:bg-charcoal px-4 pt-2 pb-4 shadow-lg border-t border-gray-100 dark:border-gray-800">
+     <div class="flex flex-col space-y-4">
+        <a href="/" class="text-base font-medium text-gray-700 hover:text-crimson dark:text-gray-300">Studio</a>
+        <a href="/aivox" class="text-base font-medium text-gray-700 hover:text-crimson dark:text-gray-300">Aivox</a>
+        <a href="/contact" class="text-base font-medium text-gray-700 hover:text-crimson dark:text-gray-300">Contact</a>
+     </div>
+  </div>
+</header>

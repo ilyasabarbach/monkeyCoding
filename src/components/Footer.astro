@@ -1,0 +1,75 @@
+---
+import { Github, Twitter, Mail } from 'lucide-astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-gray-50 border-t border-gray-100 dark:bg-charcoal dark:border-gray-800 mt-auto">
+  <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Brand -->
+      <div class="col-span-1">
+        <span class="text-xl font-bold bg-gradient-to-r from-crimson to-red-500 bg-clip-text text-transparent">
+          MonkeyCoding
+        </span>
+        <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+          Crafting intelligent mobile experiences for the modern world.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="col-span-1">
+        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Product</h3>
+        <ul class="mt-4 space-y-4">
+          <li>
+            <a href="/aivox" class="text-base text-gray-600 hover:text-crimson dark:text-gray-400 dark:hover:text-crimson transition-colors">
+              Aivox
+            </a>
+          </li>
+          <li>
+            <a href="/contact" class="text-base text-gray-600 hover:text-crimson dark:text-gray-400 dark:hover:text-crimson transition-colors">
+              Support
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="col-span-1">
+        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Legal</h3>
+        <ul class="mt-4 space-y-4">
+          <li>
+            <a href="/aivox/privacy" class="text-base text-gray-600 hover:text-crimson dark:text-gray-400 dark:hover:text-crimson transition-colors">
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="/aivox/terms" class="text-base text-gray-600 hover:text-crimson dark:text-gray-400 dark:hover:text-crimson transition-colors">
+              Terms of Service
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="pt-8 border-t border-gray-200 dark:border-gray-700 flex flex-col md:flex-row justify-between items-center">
+      <p class="text-sm text-gray-400">
+        &copy; {year} MonkeyCoding. All rights reserved.
+      </p>
+      <div class="flex space-x-6 mt-4 md:mt-0">
+        <a href="#" class="text-gray-400 hover:text-crimson transition-colors">
+          <span class="sr-only">GitHub</span>
+          <Github class="h-5 w-5" />
+        </a>
+        <a href="#" class="text-gray-400 hover:text-crimson transition-colors">
+          <span class="sr-only">Twitter</span>
+          <Twitter class="h-5 w-5" />
+        </a>
+        <a href="mailto:hello@monkeycoding.com" class="text-gray-400 hover:text-crimson transition-colors">
+          <span class="sr-only">Email</span>
+          <Mail class="h-5 w-5" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

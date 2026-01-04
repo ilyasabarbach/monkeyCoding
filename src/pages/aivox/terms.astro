@@ -1,0 +1,55 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const lastUpdated = "January 4, 2026";
+---
+
+<MainLayout title="Terms of Service - Aivox">
+  <Navbar />
+  
+  <main class="flex-grow py-16 bg-white dark:bg-charcoal">
+     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 prose prose-lg prose-crimson dark:prose-invert">
+        <h1>Terms of Service</h1>
+        <p class="text-sm text-gray-500">Last Updated: {lastUpdated}</p>
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+           By downloading or using the Aivox app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app.
+        </p>
+
+        <h2>2. Legal Compliance</h2>
+        <p>
+           <strong>Important:</strong> Laws regarding call recording vary by country and state. It is your sole responsibility to ensure that your use of Aivox complies with all applicable local, state, and federal laws. In many jurisdictions, you must obtain consent from all parties on a call before recording. MonkeyCoding provides this tool for personal use and disclaims any liability for misuse.
+        </p>
+
+        <h2>3. Intellectual Property</h2>
+        <p>
+           MonkeyCoding owns all rights, title, and interest in and to the App, including all intellectual property rights. You may not copy, modify, or distribute the App code or assets.
+        </p>
+
+        <h2>4. Use License</h2>
+        <p>
+           Permission is granted to download one copy of the materials (information or software) on MonkeyCoding's Aivox app for personal, non-commercial transitory viewing only.
+        </p>
+
+        <h2>5. Disclaimer</h2>
+        <p>
+           The materials on MonkeyCoding's website and app are provided on an 'as is' basis. MonkeyCoding makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+        </p>
+        
+        <h2>6. Limitations</h2>
+        <p>
+           In no event shall MonkeyCoding or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on MonkeyCoding's website or app.
+        </p>
+
+        <h2>7. Governing Law</h2>
+        <p>
+           These terms and conditions are governed by and construed in accordance with the laws of California and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.
+        </p>
+     </div>
+  </main>
+  
+  <Footer />
+</MainLayout>
