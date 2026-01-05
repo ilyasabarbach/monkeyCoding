@@ -1,1 +1,7 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --color-crimson: #DC143C;
+    --color-charcoal: #121212;
+}
