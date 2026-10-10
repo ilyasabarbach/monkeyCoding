@@ -1,0 +1,112 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { ArrowLeft, ShieldCheck, Mic, Smartphone, Download } from 'lucide-astro';
+---
+
+<MainLayout title="Aivox Helper — official installation information" description="Official MonkeyCoding information for the separate Aivox Helper Android app. Public download is pending release signing and compatibility verification.">
+  <Navbar />
+  <main id="helper-content" class="flex-grow helper-page">
+    <section class="bg-charcoal text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <a href="/aivox" class="inline-flex items-center gap-2 text-gray-300 hover:text-white mb-8">
+          <ArrowLeft class="w-4 h-4" aria-hidden="true" /> Back to Aivox
+        </a>
+        <div class="grid lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-7">
+            <p class="text-sm font-semibold uppercase tracking-widest text-gray-300">MonkeyCoding · Official product information</p>
+            <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">Aivox <span class="text-crimson">Helper</span></h1>
+            <p class="mt-6 text-lg text-gray-200 leading-relaxed max-w-2xl">A separate, optional Android application that works with Aivox Free. Helper owns its own microphone capture, permissions and private recordings. Free remains your main app and Manual recorder.</p>
+            <p class="mt-4 text-gray-300 leading-relaxed max-w-2xl">The development journey has demonstrated user-controlled Start and Stop, a finalized WAV, explicit import into Free and locally audible playback on one Xiaomi Android 13 device.</p>
+          </div>
+          <aside class="lg:col-span-5 rounded-2xl border border-gray-600 bg-white/5 p-6 sm:p-8" aria-labelledby="download-heading">
+            <Download class="w-7 h-7 text-gray-200" aria-hidden="true" />
+            <h2 id="download-heading" class="mt-4 text-2xl font-bold">Public download is pending</h2>
+            <p id="download-status" class="mt-4 text-gray-200 leading-relaxed">Release signing, Free/Helper compatibility and approval of the exact APK must be verified before a download is offered. The demonstrated development APK is not distributed here.</p>
+            <button type="button" disabled aria-describedby="download-status" class="mt-6 w-full rounded-xl bg-gray-700 text-gray-200 border border-gray-500 px-5 py-4 font-semibold cursor-not-allowed">Download not yet available</button>
+            <p class="mt-4 text-sm text-gray-300">No public release version, APK checksum or release signing certificate is available yet.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <section class="rounded-2xl border border-crimson/30 bg-crimson/5 p-6 sm:p-8" aria-labelledby="limits-heading">
+        <h2 id="limits-heading" class="text-2xl font-bold">What has—and has not—been demonstrated</h2>
+        <p class="mt-4 leading-relaxed max-w-3xl">Local microphone audibility is demonstrated in development. <strong>Two-party PSTN/VoIP audibility is not tested; testing is deferred by the owner.</strong> Remote-party voice capture is not validated or guaranteed.</p>
+        <p class="mt-3 leading-relaxed max-w-3xl">Automatic call recording is not implemented. Production compatibility and Google Play eligibility are not approved. This Helper journey does not provide completed AI transcription or establish universal device compatibility. Older Aivox marketing descriptions are not evidence of these Helper capabilities.</p>
+      </section>
+
+      <div class="grid md:grid-cols-2 gap-8 mt-12">
+        <section class="rounded-2xl bg-gray-50 border border-gray-200 p-6 sm:p-8" aria-labelledby="access-heading">
+          <Mic class="w-7 h-7 text-crimson" aria-hidden="true" />
+          <h2 id="access-heading" class="mt-4 text-2xl font-bold">Access is your choice</h2>
+          <p class="mt-4 leading-relaxed"><strong>Microphone:</strong> Helper requests its own Android microphone permission. Recording requires an explicit Start action and uses a visible foreground-service notification with Stop. Installing or checking integration does not start recording.</p>
+          <p class="mt-4 leading-relaxed"><strong>Accessibility:</strong> the experimental capture path requires a voluntarily enabled Helper Accessibility service. Accessibility is powerful access that can expose sensitive screen information and interactions. This implementation does not retrieve window content, collect contacts or phone numbers, perform gestures or detect calls. These limits do not eliminate all privacy or security risk.</p>
+          <p class="mt-4 leading-relaxed">You can decline setup, revoke microphone permission in Android app settings, or disable Helper Accessibility in Android Accessibility settings. Stop recording first. Keep using Free with “Continue without Helper”; Manual remains available and Auto remains unavailable.</p>
+        </section>
+
+        <section class="rounded-2xl bg-gray-50 border border-gray-200 p-6 sm:p-8" aria-labelledby="privacy-heading">
+          <ShieldCheck class="w-7 h-7 text-crimson" aria-hidden="true" />
+          <h2 id="privacy-heading" class="mt-4 text-2xl font-bold">Privacy and identity checks</h2>
+          <p class="mt-4 leading-relaxed">The reviewed development Helper has no Internet permission. WAV recordings remain in its app-private storage unless you explicitly offer a completed file and confirm authenticated import into Free. Helper keeps its original; Free stores the imported copy in its existing app storage.</p>
+          <p class="mt-4 leading-relaxed">The development integration checks the other app’s package and signing certificate and rejects ambiguous shared identities. Public release trust is still pending. A familiar app name, installation alone or a checksum alone does not establish recording readiness or remove risk from a compromised device.</p>
+          <p class="mt-4 leading-relaxed">Only use recordings with participant agreement and applicable legal requirements. Opening this website sends ordinary web requests; its privacy properties are distinct from Helper’s local capture path.</p>
+        </section>
+      </div>
+
+      <section class="mt-12" aria-labelledby="compatibility-heading">
+        <h2 id="compatibility-heading" class="text-2xl font-bold inline-flex items-center gap-3"><Smartphone class="w-6 h-6 text-crimson" aria-hidden="true" /> Compatibility and release identity</h2>
+        <dl class="mt-6 grid sm:grid-cols-2 gap-6 rounded-2xl border border-gray-200 p-6 sm:p-8">
+          <div><dt class="font-semibold">Stable package identity</dt><dd class="mt-2"><code>com.monkeycoding.aivox.helper</code></dd></div>
+          <div><dt class="font-semibold">Current development version</dt><dd class="mt-2">Version code 3 · 3.0-dev. Not a public release.</dd></div>
+          <div><dt class="font-semibold">Free-controlled capture</dt><dd class="mt-2">Android 12 / API 31 or newer. Demonstrated on Xiaomi Android 13 / API 33 only.</dd></div>
+          <div><dt class="font-semibold">Helper foreground capture</dt><dd class="mt-2">Android 6 / API 23 or newer. Package installation minimum is Android 5 / API 21; this does not make capture available on older versions.</dd></div>
+          <div><dt class="font-semibold">Public APK SHA-256 and signing certificate</dt><dd class="mt-2">Pending a real reviewed release artifact. No download or placeholder binary is linked.</dd></div>
+          <div><dt class="font-semibold">Aivox Free release compatibility</dt><dd class="mt-2">Pending. Current Free Release rejects the experimental Debug capture/control flow. Installing Helper cannot bypass that check.</dd></div>
+        </dl>
+      </section>
+
+      <section class="mt-12 max-w-3xl" aria-labelledby="install-heading">
+        <h2 id="install-heading" class="text-2xl font-bold">Installation, when a release is available</h2>
+        <p class="mt-4 leading-relaxed">These steps describe the future voluntary installation path. They cannot be completed from this page until the approved release is published.</p>
+        <ol class="mt-5 space-y-4 list-decimal pl-6 leading-relaxed">
+          <li>Return to this official page and check the published package, version, signing identity and SHA-256 for the versioned APK. Download only from the official MonkeyCoding HTTPS domain.</li>
+          <li>If Android asks, voluntarily allow this browser to install unknown apps for this installation. Android checks the APK signature and asks whether to install. Do not bypass a security warning; permission can be revoked afterward.</li>
+          <li>If an existing Helper uses a different signer, stop. Do not uninstall it or clear its data to force an upgrade. Existing development installations and recordings need a separately reviewed transition.</li>
+          <li>Open a compatible Aivox Free build and explicitly check Helper integration. Package and signer verification must pass. Installation alone does not grant microphone or Accessibility access, enable Auto or establish recording readiness.</li>
+          <li>Read Helper’s disclosure and choose whether to continue. Permission and Accessibility changes require your own Android actions. Guided setup remains a later development step.</li>
+        </ol>
+      </section>
+
+      <section class="mt-12 max-w-3xl" aria-labelledby="help-heading">
+        <h2 id="help-heading" class="text-2xl font-bold">Troubleshooting and support</h2>
+        <div class="mt-6 space-y-3">
+          <details class="rounded-xl border border-gray-200 p-5">
+            <summary class="font-semibold cursor-pointer">Why can’t I download Helper?</summary>
+            <p class="mt-3 leading-relaxed">Public release signing and compatibility verification are incomplete. There is no approved public APK yet. Keep using Free Manual; do not use a development APK or a third-party mirror as a substitute.</p>
+          </details>
+          <details class="rounded-xl border border-gray-200 p-5">
+            <summary class="font-semibold cursor-pointer">Android refuses an update or Free rejects Helper</summary>
+            <p class="mt-3 leading-relaxed">A signer, package or version mismatch can block installation or integration. Stop and contact support with the app versions and error text. Do not uninstall, clear data, disable verification or share private recordings or signing credentials.</p>
+          </details>
+          <details class="rounded-xl border border-gray-200 p-5">
+            <summary class="font-semibold cursor-pointer">Helper is installed but recording is unavailable</summary>
+            <p class="mt-3 leading-relaxed">Check supported Android versions and compatible Free/Helper releases. Consent, connected Accessibility and Helper’s own microphone permission are separate prerequisites. Device behavior varies. Use Free Manual when unavailable; do not assume a successful check means remote-party capture works.</p>
+          </details>
+        </div>
+        <p class="mt-6 leading-relaxed">Official support: <a href="mailto:contact@monkeycoding.com" class="text-crimson font-semibold underline">contact@monkeycoding.com</a>. Include versions and the error message, without private audio or credentials.</p>
+        <a href="/aivox" class="mt-6 inline-flex items-center gap-2 text-crimson font-semibold underline"><ArrowLeft class="w-4 h-4" aria-hidden="true" /> Return to the Aivox product page</a>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</MainLayout>
+
+<style>
+  .helper-page { line-height: 1.6; }
+  .helper-page code { overflow-wrap: anywhere; }
+  .helper-page a:focus-visible, .helper-page summary:focus-visible { outline: 3px solid var(--color-crimson); outline-offset: 5px; }
+  .helper-page h2 { scroll-margin-top: 5rem; }
+</style>
