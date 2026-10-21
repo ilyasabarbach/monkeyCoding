@@ -1,0 +1,11 @@
+{
+  "versionCode": 4,
+  "sha256": "864331a69705442cd8d5f93bf16639f5f7bc9889dc84e26a9369c653e9956543",
+  "path": "/downloads/aivox-helper/3.0.0-4/Aivox-Helper-3.0.0-4-864331a69705442cd8d5f93bf16639f5f7bc9889dc84e26a9369c653e9956543.apk",
+  "sizeBytes": 685408,
+  "minSdk": 21,
+  "certificateSha256": "81b0270e9b0546f146d2446e917607acf3efa3edd5e9071199fea391db575fa6",
+  "package": "com.monkeycoding.aivox.helper",
+  "versionName": "3.0.0",
+  "targetSdk": 36
+}

@@ -3,6 +3,7 @@ node_modules/
 
 # Production
 dist/
+.vercel/
 
 # Dossier cache de Astro
 .astro/

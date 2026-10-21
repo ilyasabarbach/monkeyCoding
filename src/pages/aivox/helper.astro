@@ -3,9 +3,12 @@ import MainLayout from '../../layouts/MainLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import { ArrowLeft, ShieldCheck, Mic, Smartphone, Download } from 'lucide-astro';
+import releaseData from '../../data/helper-release.json';
+// npm run build verifies the actual public APK bytes before Astro bundles this page.
+const release = releaseData;
 ---
 
-<MainLayout title="Aivox Helper — official installation information" description="Official MonkeyCoding information for the separate Aivox Helper Android app. Public download is pending release signing and compatibility verification.">
+<MainLayout title="Aivox Helper — official installation and download" description="Official optional Aivox Helper: release identity, voluntary installation, compatibility and recording limits.">
   <Navbar />
   <main id="helper-content" class="flex-grow helper-page">
     <section class="bg-charcoal text-white">
@@ -18,14 +21,19 @@ import { ArrowLeft, ShieldCheck, Mic, Smartphone, Download } from 'lucide-astro'
             <p class="text-sm font-semibold uppercase tracking-widest text-gray-300">MonkeyCoding · Official product information</p>
             <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight">Aivox <span class="text-crimson">Helper</span></h1>
             <p class="mt-6 text-lg text-gray-200 leading-relaxed max-w-2xl">A separate, optional Android application that works with Aivox Free. Helper owns its own microphone capture, permissions and private recordings. Free remains your main app and Manual recorder.</p>
-            <p class="mt-4 text-gray-300 leading-relaxed max-w-2xl">The development journey has demonstrated user-controlled Start and Stop, a finalized WAV, explicit import into Free and locally audible playback on one Xiaomi Android 13 device.</p>
+            <p class="mt-4 text-gray-300 leading-relaxed max-w-2xl">Free controls Manual recording and optional Auto for eligible cellular calls. Helper setup, permissions and a genuine preparation acknowledgement are required. Installation alone starts nothing. The same strict Free credit rules apply with Helper.</p>
           </div>
           <aside class="lg:col-span-5 rounded-2xl border border-gray-600 bg-white/5 p-6 sm:p-8" aria-labelledby="download-heading">
             <Download class="w-7 h-7 text-gray-200" aria-hidden="true" />
-            <h2 id="download-heading" class="mt-4 text-2xl font-bold">Public download is pending</h2>
-            <p id="download-status" class="mt-4 text-gray-200 leading-relaxed">Release signing, Free/Helper compatibility and approval of the exact APK must be verified before a download is offered. The demonstrated development APK is not distributed here.</p>
-            <button type="button" disabled aria-describedby="download-status" class="mt-6 w-full rounded-xl bg-gray-700 text-gray-200 border border-gray-500 px-5 py-4 font-semibold cursor-not-allowed">Download not yet available</button>
-            <p class="mt-4 text-sm text-gray-300">No public release version, APK checksum or release signing certificate is available yet.</p>
+            {release ? <>
+              <h2 id="download-heading" class="mt-4 text-2xl font-bold">Download optional Helper</h2>
+              <p id="download-status" class="mt-4 text-gray-200">Review the identity below, then choose whether to download and install through Android.</p>
+              <a href={release.path} download aria-describedby="download-status" class="mt-6 inline-flex w-full justify-center rounded-xl bg-crimson text-white px-5 py-4 font-semibold">Download Helper {release.versionName} APK</a>
+              <p class="mt-4 text-sm text-gray-300">Version code {release.versionCode} · {release.sizeBytes.toLocaleString('en-US')} bytes · Release signed</p>
+            </> : <>
+              <h2 id="download-heading" class="mt-4 text-2xl font-bold">Release download pending</h2>
+              <p id="download-status" class="mt-4 text-gray-200">The owner must sign and approve the exact release APK before publication. No APK is offered in this preparation preview. You can continue with Free Manual.</p>
+            </>}
           </aside>
         </div>
       </div>
@@ -34,24 +42,24 @@ import { ArrowLeft, ShieldCheck, Mic, Smartphone, Download } from 'lucide-astro'
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
       <section class="rounded-2xl border border-crimson/30 bg-crimson/5 p-6 sm:p-8" aria-labelledby="limits-heading">
         <h2 id="limits-heading" class="text-2xl font-bold">What has—and has not—been demonstrated</h2>
-        <p class="mt-4 leading-relaxed max-w-3xl">Local microphone audibility is demonstrated in development. <strong>Two-party PSTN/VoIP audibility is not tested; testing is deferred by the owner.</strong> Remote-party voice capture is not validated or guaranteed.</p>
-        <p class="mt-3 leading-relaxed max-w-3xl">Automatic call recording is not implemented. Production compatibility and Google Play eligibility are not approved. This Helper journey does not provide completed AI transcription or establish universal device compatibility. Older Aivox marketing descriptions are not evidence of these Helper capabilities.</p>
+        <p class="mt-4 leading-relaxed max-w-3xl">Earlier R2A builds had incoming-after-swipe evidence on one Xiaomi 2201117SG, Android 13, with both apps’ Background Autostart switches enabled: 6/6 incoming and 8/8 setup checks. <strong>This is historical evidence, not a runtime test of this Release pair or a device guarantee.</strong></p>
+        <p class="mt-3 leading-relaxed max-w-3xl"><strong>Outgoing Auto after swiping Free from Recents failed and is deferred to V2.</strong> Other brands have not been tested. Remote-party voice capture is not guaranteed. AI transcription and universal device compatibility are not established. Keep Manual available when Auto cannot prepare or fails.</p>
       </section>
 
       <div class="grid md:grid-cols-2 gap-8 mt-12">
         <section class="rounded-2xl bg-gray-50 border border-gray-200 p-6 sm:p-8" aria-labelledby="access-heading">
           <Mic class="w-7 h-7 text-crimson" aria-hidden="true" />
           <h2 id="access-heading" class="mt-4 text-2xl font-bold">Access is your choice</h2>
-          <p class="mt-4 leading-relaxed"><strong>Microphone:</strong> Helper requests its own Android microphone permission. Recording requires an explicit Start action and uses a visible foreground-service notification with Stop. Installing or checking integration does not start recording.</p>
-          <p class="mt-4 leading-relaxed"><strong>Accessibility:</strong> the experimental capture path requires a voluntarily enabled Helper Accessibility service. Accessibility is powerful access that can expose sensitive screen information and interactions. This implementation does not retrieve window content, collect contacts or phone numbers, perform gestures or detect calls. These limits do not eliminate all privacy or security risk.</p>
+          <p class="mt-4 leading-relaxed"><strong>Microphone:</strong> Helper requests its own Android microphone permission. Free starts a recording after Manual Start or an eligible call after voluntary Auto setup. Helper uses a visible foreground-service notification with Stop. Installing or checking integration does not start recording.</p>
+          <p class="mt-4 leading-relaxed"><strong>Accessibility:</strong> the Helper path requires a voluntarily enabled Helper Accessibility service. Accessibility is powerful access that can expose sensitive screen information and interactions. Helper uses the actual service connection as compatibility context; it does not retrieve window content, collect contacts or phone numbers, perform gestures or detect calls. Free observes eligible cellular call state separately. Installing the APK grants no Accessibility access.</p>
           <p class="mt-4 leading-relaxed">You can decline setup, revoke microphone permission in Android app settings, or disable Helper Accessibility in Android Accessibility settings. Stop recording first. Keep using Free with “Continue without Helper”; Manual remains available and Auto remains unavailable.</p>
         </section>
 
         <section class="rounded-2xl bg-gray-50 border border-gray-200 p-6 sm:p-8" aria-labelledby="privacy-heading">
           <ShieldCheck class="w-7 h-7 text-crimson" aria-hidden="true" />
           <h2 id="privacy-heading" class="mt-4 text-2xl font-bold">Privacy and identity checks</h2>
-          <p class="mt-4 leading-relaxed">The reviewed development Helper has no Internet permission. WAV recordings remain in its app-private storage unless you explicitly offer a completed file and confirm authenticated import into Free. Helper keeps its original; Free stores the imported copy in its existing app storage.</p>
-          <p class="mt-4 leading-relaxed">The development integration checks the other app’s package and signing certificate and rejects ambiguous shared identities. Public release trust is still pending. A familiar app name, installation alone or a checksum alone does not establish recording readiness or remove risk from a compromised device.</p>
+          <p class="mt-4 leading-relaxed">Helper has no Internet permission. WAV recordings stay in app-private storage. The recording-and-transfer agreement authorizes authenticated transfer of new Free-controlled recordings into Free’s library. Historical Helper files are not silently imported. Existing recordings remain readable and exportable when credits reach zero.</p>
+          <p class="mt-4 leading-relaxed">Release integration checks exact package and signing certificates for Helper and Play-distributed Free, and rejects ambiguous shared identities. An upload-signed local Free APK is not the Play-installed identity. A checksum or successful handshake alone does not establish recording readiness.</p>
           <p class="mt-4 leading-relaxed">Only use recordings with participant agreement and applicable legal requirements. Opening this website sends ordinary web requests; its privacy properties are distinct from Helper’s local capture path.</p>
         </section>
       </div>
@@ -60,23 +68,24 @@ import { ArrowLeft, ShieldCheck, Mic, Smartphone, Download } from 'lucide-astro'
         <h2 id="compatibility-heading" class="text-2xl font-bold inline-flex items-center gap-3"><Smartphone class="w-6 h-6 text-crimson" aria-hidden="true" /> Compatibility and release identity</h2>
         <dl class="mt-6 grid sm:grid-cols-2 gap-6 rounded-2xl border border-gray-200 p-6 sm:p-8">
           <div><dt class="font-semibold">Stable package identity</dt><dd class="mt-2"><code>com.monkeycoding.aivox.helper</code></dd></div>
-          <div><dt class="font-semibold">Current development version</dt><dd class="mt-2">Version code 3 · 3.0-dev. Not a public release.</dd></div>
+          <div><dt class="font-semibold">Release version</dt><dd class="mt-2">{release ? `${release.versionName} · version code ${release.versionCode}` : 'Pending owner signing and exact-artifact approval'}</dd></div>
           <div><dt class="font-semibold">Free-controlled capture</dt><dd class="mt-2">Android 12 / API 31 or newer. Demonstrated on Xiaomi Android 13 / API 33 only.</dd></div>
-          <div><dt class="font-semibold">Helper foreground capture</dt><dd class="mt-2">Android 6 / API 23 or newer. Package installation minimum is Android 5 / API 21; this does not make capture available on older versions.</dd></div>
-          <div><dt class="font-semibold">Public APK SHA-256 and signing certificate</dt><dd class="mt-2">Pending a real reviewed release artifact. No download or placeholder binary is linked.</dd></div>
-          <div><dt class="font-semibold">Aivox Free release compatibility</dt><dd class="mt-2">Pending. Current Free Release rejects the experimental Debug capture/control flow. Installing Helper cannot bypass that check.</dd></div>
+          <div><dt class="font-semibold">Android eligibility</dt><dd class="mt-2">Package minimum Android 5 / API 21; target API 36. Free requires API 24. Helper-controlled recording requires API 31 or newer; Auto is bounded to API 31–36. Installing on an older OS does not enable capture.</dd></div>
+          <div><dt class="font-semibold">APK SHA-256</dt><dd class="mt-2"><code>{release?.sha256 ?? 'Pending signed APK'}</code></dd></div>
+          <div><dt class="font-semibold">Helper signing certificate SHA-256</dt><dd class="mt-2"><code>81b0270e9b0546f146d2446e917607acf3efa3edd5e9071199fea391db575fa6</code></dd></div>
+          <div><dt class="font-semibold">Aivox Free release compatibility</dt><dd class="mt-2">Requires Free 3.0.0 distributed with its expected Play App Signing certificate. Cryptographic configuration and host checks do not establish device acceptance; the owner-operated Play-signed Release-pair runtime check remains pending.</dd></div>
         </dl>
       </section>
 
       <section class="mt-12 max-w-3xl" aria-labelledby="install-heading">
         <h2 id="install-heading" class="text-2xl font-bold">Installation, when a release is available</h2>
-        <p class="mt-4 leading-relaxed">These steps describe the future voluntary installation path. They cannot be completed from this page until the approved release is published.</p>
+        <p class="mt-4 leading-relaxed">Installation is voluntary. If no release download is shown, wait for publication or continue with Free Manual.</p>
         <ol class="mt-5 space-y-4 list-decimal pl-6 leading-relaxed">
           <li>Return to this official page and check the published package, version, signing identity and SHA-256 for the versioned APK. Download only from the official MonkeyCoding HTTPS domain.</li>
           <li>If Android asks, voluntarily allow this browser to install unknown apps for this installation. Android checks the APK signature and asks whether to install. Do not bypass a security warning; permission can be revoked afterward.</li>
           <li>If an existing Helper uses a different signer, stop. Do not uninstall it or clear its data to force an upgrade. Existing development installations and recordings need a separately reviewed transition.</li>
           <li>Open a compatible Aivox Free build and explicitly check Helper integration. Package and signer verification must pass. Installation alone does not grant microphone or Accessibility access, enable Auto or establish recording readiness.</li>
-          <li>Read Helper’s disclosure and choose whether to continue. Permission and Accessibility changes require your own Android actions. Guided setup remains a later development step.</li>
+          <li>Follow Free’s existing setup guide, read Helper’s disclosure and choose each permission yourself. Review both apps’ notification and OEM settings. Enable Auto only if you choose it; Free must receive a genuine prepared-service acknowledgement. READY is a prerequisite state, not proof of a saved recording.</li>
         </ol>
       </section>
 
@@ -85,7 +94,7 @@ import { ArrowLeft, ShieldCheck, Mic, Smartphone, Download } from 'lucide-astro'
         <div class="mt-6 space-y-3">
           <details class="rounded-xl border border-gray-200 p-5">
             <summary class="font-semibold cursor-pointer">Why can’t I download Helper?</summary>
-            <p class="mt-3 leading-relaxed">Public release signing and compatibility verification are incomplete. There is no approved public APK yet. Keep using Free Manual; do not use a development APK or a third-party mirror as a substitute.</p>
+            <p class="mt-3 leading-relaxed">A download appears only for a reviewed Release-signed APK whose bytes match the published receipt. If it is absent or fails, keep using Free Manual and contact support. Do not substitute a Debug APK or third-party mirror.</p>
           </details>
           <details class="rounded-xl border border-gray-200 p-5">
             <summary class="font-semibold cursor-pointer">Android refuses an update or Free rejects Helper</summary>
