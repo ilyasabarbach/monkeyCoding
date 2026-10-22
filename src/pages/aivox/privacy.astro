@@ -2,9 +2,9 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
-import { Shield, Lock, EyeOff, Server, Trash2, Mail, ArrowLeft, CheckCircle } from 'lucide-astro';
+import { Shield, Lock, EyeOff, Server, Mail, ArrowLeft, CheckCircle } from 'lucide-astro';
 
-const lastUpdated = "January 3, 2026";
+const lastUpdated = "October 22, 2026";
 ---
 
 <MainLayout title="Privacy Policy - Aivox">
@@ -28,7 +28,7 @@ const lastUpdated = "January 3, 2026";
             </div>
             <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">Privacy Policy</h1>
             <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                We believe privacy is a feature, not a disclaimer. Here is exactly how Aivox protects your data.
+                How Automatic Call Recorder (Aivox Free) handles recordings and data used by its app services.
             </p>
             <p class="text-sm text-gray-400 mt-4">Last Updated: {lastUpdated}</p>
         </div>
@@ -37,27 +37,30 @@ const lastUpdated = "January 3, 2026";
             <div class="absolute top-0 right-0 w-32 h-32 bg-crimson/10 rounded-bl-full -mr-8 -mt-8"></div>
             <h3 class="text-xl font-bold text-gray-900 dark:text-white flex items-center mb-6 relative z-10">
                 <CheckCircle class="w-6 h-6 text-crimson mr-3" />
-                The 100% Offline Promise
+                App and Developer Identification
             </h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                 <div>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        <strong>Aivox does NOT operate servers.</strong> We have zero ability to listen to, upload, or share your recordings. Your audio files live on your phone's physical storage, just like your photos.
+                        <strong>App name:</strong> Automatic Call Recorder (Aivox Free)<br />
+                        <strong>Package:</strong> <span class="break-all">com.monkeycoding.aivox.ai.auto.callrecorder</span><br />
+                        <strong>Google Play developer display name:</strong> mercury4apps<br />
+                        <strong>Developer/account holder:</strong> ILYAS ABARBACH
                     </p>
                 </div>
                 <div class="bg-gray-50 dark:bg-black/20 rounded-xl p-4 text-sm text-gray-500 dark:text-gray-400 border border-gray-100 dark:border-white/5">
                     <ul class="space-y-3">
                         <li class="flex items-start">
                             <Server class="w-4 h-4 mr-2 mt-0.5 text-crimson" />
-                            <span>No Cloud Uploads</span>
+                            <span><strong>Brand:</strong> MonkeyCoding</span>
                         </li>
                         <li class="flex items-start">
                             <EyeOff class="w-4 h-4 mr-2 mt-0.5 text-crimson" />
-                            <span>No User Analytics</span>
+                            <span><strong>Website:</strong> <a href="https://www.monkeycoding.com" class="text-crimson underline">https://www.monkeycoding.com</a></span>
                         </li>
                         <li class="flex items-start">
                             <Lock class="w-4 h-4 mr-2 mt-0.5 text-crimson" />
-                            <span>No Third-Party Tracking</span>
+                            <span><strong>Privacy contact:</strong> <a href="mailto:contact@monkeycoding.com" class="text-crimson underline break-all">contact@monkeycoding.com</a></span>
                         </li>
                     </ul>
                 </div>
@@ -68,12 +71,24 @@ const lastUpdated = "January 3, 2026";
             
             <div class="grid md:grid-cols-[250px_1fr] gap-8 mb-12">
                 <div class="md:text-right">
-                    <h3 class="text-gray-900 dark:text-white font-bold mt-0">1. Data Collection</h3>
-                    <p class="text-sm text-gray-500 mt-2">What we know about you.</p>
+                    <h3 class="text-gray-900 dark:text-white font-bold mt-0">1. Recordings and App Services</h3>
+                    <p class="text-sm text-gray-500 mt-2">Local files and Google SDK data.</p>
                 </div>
                 <div>
                     <p>
-                        We do not collect personal data. The app operates offline. We may collect your name or email only if you voluntarily contact support.
+                        Call recordings are stored locally on your device. This local storage is separate from the network data processed by Google SDKs; it does not mean the entire app operates offline.
+                    </p>
+                    <p>
+                        Free 3.0.0 includes Google AdMob for advertising, Google's User Messaging Platform (UMP) for consent, and Firebase for app services. These integrations may process data over the internet, depending on the services enabled, SDK configuration and applicable consent choices.
+                    </p>
+                    <p>
+                        AdMob may collect and share IP addresses (which can indicate approximate location), device or advertising identifiers, app and ad interactions, and diagnostic information for advertising, measurement and fraud prevention. UMP processes consent choices and information needed to present and manage consent messages. Firebase may process installation identifiers, device and app information, and service-related technical data for the Firebase services in use. These disclosures concern SDK data and do not describe call recordings as advertising data.
+                    </p>
+                    <p>
+                        For Google's handling of this data, see the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>, <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure">AdMob data disclosures</a> and <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>. Where offered, use the app's consent or privacy options to review your choices. Android settings also provide advertising ID controls.
+                    </p>
+                    <p>
+                        If you contact support, we receive your email address and any information you include so we can respond. Please avoid sending recordings or other sensitive information unless needed for your request.
                     </p>
                 </div>
             </div>
@@ -91,7 +106,7 @@ const lastUpdated = "January 3, 2026";
                             <div class="flex-shrink-0 w-8 h-8 rounded-full bg-crimson/10 flex items-center justify-center text-crimson mr-4">
                                 <span class="font-bold text-xs">MIC</span>
                             </div>
-                            <span><strong>Microphone:</strong> To capture audio only during active calls.</span>
+                            <span><strong>Microphone:</strong> To capture audio for call recording.</span>
                         </li>
                         <li class="flex">
                             <div class="flex-shrink-0 w-8 h-8 rounded-full bg-crimson/10 flex items-center justify-center text-crimson mr-4">
@@ -118,7 +133,7 @@ const lastUpdated = "January 3, 2026";
                 </div>
                 <div>
                     <p>
-                        <strong>Forever, or until you delete it.</strong> We cannot delete your files remotely because we cannot access them. You are in full control using the app's "Auto-Delete" settings or manual deletion.
+                        You can delete locally stored recordings from your device. Copies you export or share must be managed separately. Deleting a local recording does not delete data already processed by Google SDKs; retention of that data depends on the Google service and its applicable policies. Contact us with privacy or data requests at <a href="mailto:contact@monkeycoding.com">contact@monkeycoding.com</a>.
                     </p>
                 </div>
             </div>
@@ -129,7 +144,7 @@ const lastUpdated = "January 3, 2026";
                 <Mail class="w-8 h-8 text-gray-400 mx-auto mb-4" />
                 <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Still have questions?</h3>
                 <p class="text-gray-600 dark:text-gray-400 mb-6 text-sm">
-                    Our Data Protection Officer is available to answer any concerns.
+                    Contact ILYAS ABARBACH, the developer/account holder, at contact@monkeycoding.com with privacy questions.
                 </p>
                 <a href="mailto:contact@monkeycoding.com" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-crimson hover:bg-red-700 transition-all">
                     Email Support
